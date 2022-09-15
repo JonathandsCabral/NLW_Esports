@@ -1,0 +1,189 @@
+* { /*CSS GERAL*/
+    margin: 0; /*Retira todas as margins fora das caixas*/
+    padding: 0; /*Retira todos os paddings dentro das caixas*/
+    box-sizing: border-box; /*Tamanho da caixa - nuda a maneira que você conta o tamanho da caixa. Se eu colocar um width de 500px, mesmo que eu coloque um padding de 40px o tamanho vai continuar 500px, sacou?*/
+    
+}
+
+body { /*CORPO HTML*/
+    background-image: url("img/Fundo.jpg"); /*Img de fundo*/
+    background-position: top center; /*Imagem fica no topo e centro*/
+    background-size: 100% auto; /*Imagem vai se adaptar ao tamanho da tela*/
+    background-repeat: no-repeat; /*Imagem não será repetida na tela*/
+    background-color: #121214; /*Cor de fundo caso a imagem não funcione ou para completar a cor de fundo da imagem*/
+}
+
+/* *****ESTILO DA FONTE***** */
+
+/* Seleciona todos os elementos de body */
+body * {
+    font-family: 'Inter', sans-serif; /*Tipo de fonte*/
+    line-height: 160%; /*Permite controlar o espaçamento entre as linhas de um texto*/
+}
+
+/* *********** HEADER *********** */
+/*Imagem do Perfil*/
+
+header {
+    padding-top: 52px;
+    height: calc(120px + 52px);
+}
+
+header div img { /* Imagem do perfil vai ficar redonda e com tamanho máximo de 100% */
+    border-radius: 50%;
+    width: 100%;
+}
+
+header div { /* Gradiente da foto do perfil */
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC, #43E7AD, #E2D45C);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s; /* Efeito de transição do hover */
+}
+
+header div:hover { /* Transição */
+    transform: scale(1.1);
+}
+
+/* ********************** */
+
+/* *********** MAIN *********** */
+
+main {
+    max-width: 580px; /*Largura máxima do main, tudo que estiver dentro do main vai se adaptar a essa largura*/
+    width: 90%; /*Será relativo a largura da tela, deixando um espaço.*/
+    margin: 52px auto; /*As margens ao redor da caixa vão ficar centralizadas automáticas*/
+
+
+    /*display: grid; ouuu */
+    display: flex; /*Visualização do elemento/das caixas no HTML, fica um ao lado do outro.*/
+    flex-direction: column; /*Muda a direção do main para coluna*/
+    gap: 24px; /*gap vai dar um espaçamento entre os elementos, ele só funciona com display flex ou grid (se funcionar com outro eu desconheço)*/
+}
+
+/* ********************** */
+
+/* *********** SECTION *********** */
+
+/* 
+Display block -  faz um bloqueio na linha inteira, empurrando os blocos para baixo.
+*/
+
+section ul { /* Estilo da lista */
+    list-style: none; /*Retira o estilo da lista, circulos, bolinhas, etc.*/
+    display: flex; /*Visualização do elemento/das caixas no HTML, fica um ao lado do outro.*/
+    flex-wrap: wrap; /*Vai quebrar a linha caso tenha mais conteúdos*/
+    gap: 16px; /*gap vai dar um espaçamento entre os elementos, ele só funciona com display flex ou grid (se funcionar com outro eu desconheço)*/
+    margin-top: 24px; /*espaçamento no topo dos conteúdos ul*/
+}
+
+section {
+    color: #fff; /*Cor das letras*/
+    background-image: linear-gradient(90deg, #9572FC, #43E7AD, #E2D45C);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section h2 {
+    font-weight: 900; /*Peso da fonte "negrito"*/
+    font-size: 24px; /*Tamanho da fonte*/
+    letter-spacing: -0.47px; /*espaçamento das letras*/
+}
+
+section p {
+    font-size: 16px; /*Tamanho da fonte*/
+    font-weight: 400; /*Peso da fonte "negrito"*/
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 24px 32px 32px; /*Preenchimento interno*/
+    border-radius: 8px;
+}
+
+/*Transição - SECTION*/
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+/* ********************** */
+
+/*Imagens - SECTION*/
+
+.games-list img { /*Imagens dos meus jogos*/
+    border-radius: 8px;
+    width: 90px;
+}
+
+.channel-list img { /*Imagens dos meus canais favoritos*/
+    border-radius: 50%; /*Vai deixar a imagem redonda*/
+    height: 70px;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* ********************** */
+
+/* *****ANIMATION***** */
+/*definir a animação*/
+
+header div {
+    animation: fromTop .7s .3s backwards;
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+main section {
+    animation: fromBottom .7s .2s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* *****ANIMATION***** */
+/* ******************** */
